@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#111318">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cifras">
+  <title>Cifra Viewer</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela inicial -->
+  <div id="home" class="screen">
+    <div class="home-content">
+      <img src="icons/icon-192.png" alt="" class="home-logo">
+      <h1>Cifra Viewer</h1>
+      <p class="hint">Abra as imagens (JPG) das suas cifras.<br>As imagens são ordenadas pelo nome do arquivo.</p>
+      <label class="btn btn-primary" for="filePicker">📂 Abrir cifras</label>
+      <input type="file" id="filePicker" accept="image/*" multiple hidden>
+      <button class="btn" id="btnSettingsHome">⚙️ Configurações</button>
+    </div>
+  </div>
+
+  <!-- Visualizador -->
+  <div id="viewer" class="screen hidden">
+    <img id="cifraImg" alt="Cifra">
+
+    <!-- Zonas de toque (tocar nas laterais também navega) -->
+    <div id="tapPrev" class="tap-zone tap-left"></div>
+    <div id="tapNext" class="tap-zone tap-right"></div>
+
+    <!-- Barra superior (aparece ao tocar no centro) -->
+    <div id="topbar" class="topbar">
+      <button class="icon-btn" id="btnBack" title="Voltar">←</button>
+      <span id="counter" class="counter">1 / 1</span>
+      <span id="fileName" class="file-name"></span>
+      <button class="icon-btn" id="btnSettings" title="Configurações">⚙️</button>
+      <button class="icon-btn" id="btnFullscreen" title="Tela cheia">⛶</button>
+    </div>
+  </div>
+
+  <!-- Configurações -->
+  <div id="settings" class="modal hidden">
+    <div class="modal-box">
+      <h2>Configurações</h2>
+
+      <div class="setting-row">
+        <span>Tecla — próxima cifra</span>
+        <button class="btn key-btn" id="keyNext">→</button>
+      </div>
+      <div class="setting-row">
+        <span>Tecla — cifra anterior</span>
+        <button class="btn key-btn" id="keyPrev">←</button>
+      </div>
+      <p class="hint small">Toque no botão e pressione a tecla desejada no teclado
+        (ou acione o pedal Bluetooth).</p>
+
+      <div class="setting-row">
+        <span>Manter tela ligada</span>
+        <input type="checkbox" id="wakeLockToggle" checked>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="btnResetKeys">Restaurar padrão</button>
+        <button class="btn btn-primary" id="btnCloseSettings">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

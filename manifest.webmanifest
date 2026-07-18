@@ -1,0 +1,15 @@
+{
+  "name": "Cifra Viewer",
+  "short_name": "Cifras",
+  "description": "Visualizador de cifras em imagem com navegação por teclado ou pedal Bluetooth.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#111318",
+  "theme_color": "#111318",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
