@@ -74,6 +74,7 @@ html, body {
 /* ---------- Visualizador ---------- */
 #viewer {
   background: #000;
+  touch-action: none;
 }
 
 #cifraImg {
@@ -83,6 +84,16 @@ html, body {
   height: 100%;
   object-fit: contain;
   background: #000;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+#viewer.zoomed .tap-zone {
+  pointer-events: none;
+}
+
+#viewer.zoomed #cifraImg {
+  cursor: grab;
 }
 
 .tap-zone {

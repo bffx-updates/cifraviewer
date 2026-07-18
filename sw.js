@@ -1,4 +1,4 @@
-const CACHE = "cifra-viewer-v1";
+const CACHE = "cifra-viewer-v2";
 const ASSETS = [
   "./",
   "./index.html",
